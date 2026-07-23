@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michał Sienkiewicz — CLI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="terminal">
+        <!-- HEADER TERMINALA -->
+        <div class="code-line prompt">
+            <span class="symbol">&gt;</span> <span class="entity">whois</span>
+        </div>
+        <h1 class="code-line intro">
+            Michał Sienkiewicz — Junior Cybersecurity Analyst
+        </h1>
+
+        <!-- HISTORIA KOMEND I LOGI -->
+        <div id="cli-output"></div>
+
+        <!-- INTERAKTYWNY PROMPT -->
+        <div class="command-line">
+            <span class="symbol">&gt;</span>
+            <input type="text" id="cli-input" placeholder="Wpisz 'pomoc' i naciśnij Enter" autofocus spellcheck="false">
+        </div>
+
+        <!-- UKRYTE SEKCJE STRONY -->
+        <div id="terminal-sections">
+            <!-- SEKCJA 1: PROJEKTY -->
+            <section id="sec-projekty" class="section-block hidden">
+                <h2 class="section-title"># 01. PROJEKTY</h2>
+                <ul class="entry-list">
+                    <li>
+                        <a href="pages/nas.html" class="nav-item">
+                            <span class="entry-label">Serwer NAS</span>
+                            <span class="entry-meta">Dokumentacja / Foto</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/twoj-profil/homelab" target="_blank" rel="noopener noreferrer" class="nav-item">
+                            <span class="entry-label">Homelab</span>
+                            <span class="entry-meta">W trakcie</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- SEKCJA 2: KURSY I UMIEJĘTNOŚCI -->
+            <section id="sec-skills" class="section-block hidden">
+                <h2 class="section-title"># 02. KURSY I UMIEJĘTNOŚCI</h2>
+                <ul class="entry-list">
+                   <li>
+                     <a href="pages/certyfikaty.html" class="nav-item">
+                        <span class="entry-label">Certyfikaty</span>
+                         <span class="entry-meta">01-09-25</span>
+                     </a>
+                    </li>
+                    <li>
+                        <div class="nav-item info-item">
+                            <span class="entry-label">Umiejętności</span>
+                            <span class="entry-meta" id="skills-date"></span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- SEKCJA 3: MINI BLOG / LOGI -->
+            <section id="sec-blog" class="section-block hidden">
+                <h2 class="section-title"># 03. BLOG I LOGI</h2>
+                <ul class="entry-list">
+                    <li>
+                        <a href="pages/nas.html" class="nav-item">
+                            <span class="entry-label">#1 Początek</span>
+                            <span class="entry-meta">05-04-26</span>
+                        </a>
+                    </li>
+                     <li>
+                        <a href="pages/nas.html" class="nav-item">
+                            <span class="entry-label">#2 Pierwsze kroki</span>
+                            <span class="entry-meta">23-07-26</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- KONTAKT I O MNIE -->
+        <section class="section-block footer-code">
+            <div class="code-line">
+                <span class="function">o_mnie</span>(
+                <a href="pages/o-mnie.html" class="selectable-link">'profil'</a> )
+            </div>
+            <div class="code-line" style="margin-top: 0.5rem;">
+                <span class="function">kontakt</span>(
+                <a href="mailto:bendrusm@gmail.com" class="selectable-link">'bendrusm@gmail.com'</a> )
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

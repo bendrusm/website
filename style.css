@@ -1,0 +1,236 @@
+:root {
+    --bg-base:       #000000;
+    --c-black:       #000000;
+    --c-white:       #ffffff;
+    --text-main:     #cad3f5;
+    --subtext:       #a5adcb;
+    
+    --accent-red:    #ed8796;
+    --accent-green:  #a6da95;
+    --accent-yellow: #eed49f;
+    --accent-blue:   #8aadf4;
+    --accent-pink:   #f5bde6;
+    --accent-cyan:   #8bd5ca;
+    
+    --border-color:  #363a4f;
+    --font-mono:     'Fira Code', monospace;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 1.5rem 1rem;
+    background-color: var(--bg-base);
+    color: var(--text-main);
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    line-height: 1.35;
+}
+
+.terminal {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* Prompty */
+.prompt .symbol, .command-line .symbol { 
+    color: var(--accent-red); 
+    font-weight: bold; 
+}
+
+.prompt .entity { 
+    color: var(--accent-yellow); 
+    font-weight: bold; 
+}
+
+.intro {
+    font-size: 0.85rem;
+    font-weight: normal;
+    margin: 0.2rem 0 1rem 0;
+}
+
+/* Pole wpisywania komend */
+.command-line {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.command-line input {
+    background: transparent;
+    border: none;
+    color: var(--accent-green);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    outline: none;
+    width: 100%;
+}
+
+/* Klasa ukrywająca sekcje */
+.hidden {
+    display: none;
+}
+
+/* Sekcje */
+.section-block {
+    margin-top: 1.2rem;
+}
+
+.section-title {
+    color: var(--accent-blue);
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.entry-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem 0.5rem;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: background 0.1s ease;
+}
+
+.nav-item:hover,
+.nav-item:focus {
+    background-color: rgba(138, 173, 244, 0.15);
+    outline: none;
+}
+
+.nav-item:hover::before,
+.nav-item:focus::before {
+    content: "> ";
+    color: var(--accent-green);
+    font-weight: bold;
+    margin-right: 0.4rem;
+}
+
+.entry-label { flex-grow: 1; color: var(--text-main); }
+.entry-meta { color: var(--accent-cyan); font-size: 0.78rem; }
+
+/* Logi konsoli */
+.console-log {
+    margin: 0.4rem 0;
+    color: var(--subtext);
+    font-size: 0.82rem;
+}
+
+.console-log.error { color: var(--accent-red); }
+.console-log.success { color: var(--accent-green); }
+
+/* Stopka */
+.footer-code {
+    margin-top: 2rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--accent-pink);
+    font-size: 0.82rem;
+}
+
+.footer-code .selectable-link {
+    color: var(--accent-green);
+    text-decoration: none;
+}
+
+.footer-code .selectable-link:hover {
+    text-decoration: underline;
+    color: var(--c-white);
+}
+/* -------------------------------------------------
+   6. Blok Kodu w stylu Obsidian
+   ------------------------------------------------- */
+.code-block {
+    background-color: #0d0e11;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    margin: 1.5rem 0;
+    overflow: hidden;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #16171d;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--subtext);
+}
+
+.code-header .file-name {
+    color: var(--accent-yellow);
+    font-weight: bold;
+}
+
+.code-header .lang-tag:empty {
+    display: none;
+}
+
+.code-content {
+    padding: 1.2rem;
+    font-family: var(--font-mono);
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+.code-content h2 {
+    color: var(--accent-blue);
+    font-size: 0.88rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.code-content h2:first-child {
+    margin-top: 0;
+}
+
+.code-content ul {
+    padding-left: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.code-content li {
+    margin-bottom: 0.3rem;
+}
+
+.img-container {
+    border: 1px dashed var(--border-color);
+    padding: 0.8rem;
+    text-align: center;
+    margin-top: 0.8rem;
+    background-color: #000000;
+    border-radius: 4px;
+}
+
+.img-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto;
+}
+
+.img-container .img-caption {
+    color: var(--subtext);
+    font-size: 0.75rem;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.code-content p {
+    text-align: justify;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tytuł Podstrony — Michał Sienkiewicz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <main class="terminal">
+        <!-- HEADER TERMINALA -->
+        <div class="code-line prompt">
+            <span class="symbol">&gt;</span> <span class="entity">cat nazwa-pliku.md</span>
+        </div>
+        <h1 class="code-line intro">
+            Tytuł Projektu / Wpisu
+        </h1>
+
+        <!-- POWRÓT DO STRONY GŁÓWNEJ -->
+        <div style="margin-bottom: 1.5rem;">
+            <a href="../index.html" class="selectable-link" style="color: var(--accent-blue); text-decoration: none;">&lt;-- Powrót do menu głównego</a>
+        </div>
+
+        <!-- BLOK KODU OBSIDIAN -->
+        <div class="code-block">
+            <div class="code-header">
+                <span class="file-name">nazwa-pliku.md</span>
+                <span class="lang-tag">markdown</span>
+            </div>
+            
+            <div class="code-content">
+                <h2># 01. TYTUŁ SEKCJI</h2>
+                <p>
+                    Tutaj wpisz swój tekst...
+                </p>
+
+                <h2># 02. ZDJĘCIE / ARCHITEKTURA</h2>
+                <div class="img-container">
+                    <img src="../png/twoje-zdjecie.jpg" alt="Opis zdjęcia">
+                    <span class="img-caption">[Foto: Podpis pod zdjęciem]</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- STOPKA -->
+        <section class="section-block footer-code">
+            <div class="code-line">
+                <span class="function">status</span>( <span style="color: var(--accent-green);">'Status wpisu'</span> )
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

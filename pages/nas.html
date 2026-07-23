@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serwer NAS — Michał Sienkiewicz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <main class="terminal">
+        <!-- HEADER TERMINALA -->
+        <div class="code-line prompt">
+            <span class="symbol">&gt;</span> <span class="entity">cat projekty/nas.md</span>
+        </div>
+        <h1 class="code-line intro">
+            Dokumentacja Projektu: Domowy Serwer NAS
+        </h1>
+
+        <!-- POWRÓT DO STRONY GŁÓWNEJ -->
+        <div style="margin-bottom: 1.5rem;">
+            <a href="../index.html" class="selectable-link" style="color: var(--accent-blue); text-decoration: none;">&lt;-- Powrót do menu głównego</a>
+        </div>
+
+        <!-- BLOK KODU OBSIDIAN -->
+        <div class="code-block">
+            <div class="code-header">
+                <span class="file-name">Opis projektu</span>
+                <span class="lang-tag"></span>
+            </div>
+            
+            <div class="code-content">
+                <h2># 01. GENEZA I HARDWARE</h2>
+                <p>
+                    Głównym celem projektu była ucieczka od ograniczeń darmowych chmur publicznych (i ich 15 GB limitu) na rzecz własnego, lokalnego magazynu danych o pojemności 1 TB. Serwer ma służyć jako szybki, bezprzewodowy węzeł wymiany plików w sieci domowej oraz docelowa przestrzeń na automatyczne backupy ze sprzętów z Linuksem i Androidem.
+                </p>
+                <p><strong>Architektura sprzętowa:</strong></p>
+                <ul>
+                    <li><strong>Serce zestawu:</strong> Raspberry Pi 4 Model B (2 GB RAM) z systemem operacyjnym postawionym na karcie microSD 32 GB.</li>
+                    <li><strong>Magazyn danych:</strong> Dwa dyski HDD 3.5" o pojemności 1 TB każdy, zamontowane w zewnętrznej stacji dokującej podpiętej przez magistralę USB 3.0. Całość działa bezgłośnie podczas codziennej pracy.</li>
+                </ul>
+
+                <h2># 02. PROTOKOŁY I ARCHITEKTURA RETENCJI DANYCH</h2>
+                <p>
+                    Wykorzystanie stacji dokującej podłączanej przez USB uniemożliwiło spięcie dysków w tradycyjną macierz RAID 1. Odpowiedzią na to ograniczenie jest planowane wdrożenie dedykowanego narzędzia do automatycznej synchronizacji.
+                </p>
+                <p>
+                    Docelowy przepływ danych zakłada dwupoziomowy automat: z jednej strony bieżący backup plików z laptopa i smartfona na pierwszy dysk, z drugiej — cykliczny, tle-owy mirroring zawartości z Dysku 1 na Dysk 2. W przypadku awarii fizycznej nośnika głównego, drugi dysk zachowuje pełną kopię zapasową.
+                </p>
+                <p>
+                    Za bezpośredni dostęp do zasobów w sieci LAN odpowiada protokół <strong>Samba (SMB)</strong>, gwarantując niskie opóźnienia przy wymianie danych między środowiskami Linux i Android.
+                </p>
+
+                <h2># 03. EWOLUCJA OS: HARDENING VS ERGONOMIA</h2>
+                <p>
+                    Dobór środowiska operacyjnego to historia iteracyjnych testów na żywym organizmie:
+                </p>
+                <ul>
+                    <li><strong>Ubuntu Server:</strong> Odrzucone na starcie. Problemy z prawidłowym zarządzaniem strefami zasilania (spindown) w stacji dokującej USB powodowały cykliczne wybudzanie talerzy HDD co 5 minut, generując niepotrzebny hałas i zużycie sprzętu.</li>
+                    <li><strong>OpenMediaVault (OMV):</strong> Najbardziej dojrzały wybór w zestawieniu. Przeprowadzony rygorystyczny hardening systemu dał stabilny i bezpieczny serwer z prawidłową obsługą usypiania dysków.</li>
+                    <li><strong>CasaOS:</strong> Poligon doświadczalny. Wygodny interfejs dla laika zderzył się z zauważalnymi lukami w domyślnej konfiguracji bezpieczeństwa. Obecnie trwa faza testowa — jeśli ręczne utwardzenie systemu nie przyniesie oczekiwanych rezultatów, projekt powróci pod kontrolę OMV.</li>
+                </ul>
+
+                <h2># 04. ZDJĘCIE / ARCHITEKTURA</h2>
+                <div class="img-container">
+                    <img src="../png/nas-pi4.jpg" alt="Zdjęcie serwera NAS na Raspberry Pi 4">
+                    <span class="img-caption">
+
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- STOPKA -->
+        <section class="section-block footer-code">
+            <div class="code-line">
+                <span class="function">status</span>( <span style="color: var(--accent-green);">'NAS Aktywny / Audyt CasaOS'</span> )
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
