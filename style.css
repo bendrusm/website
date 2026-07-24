@@ -234,3 +234,10 @@ body {
 .code-content p {
     text-align: justify;
 }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #000000; /* Lub kolor Twojego tła w terminalu */
+}
