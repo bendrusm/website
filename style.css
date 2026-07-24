@@ -235,3 +235,98 @@ body {
 .code-content p {
     text-align: justify;
 }
+
+/* Domyślnie na PC blok z przyciskami mobilnymi jest ukryty */
+.mobile-buttons {
+    display: none;
+}
+
+/* Wersja na ekrany smartfonów / tabletów */
+@media (max-width: 768px) {
+    .command-line input {
+        font-size: 16px; /* Zapobiega automatycznemu zoomowaniu ekranu */
+    }
+}
+    
+    /* Pokazujemy przyciski do klikania */
+    .mobile-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+}
+
+/* --- TABLICA KANBAN --- */
+.kanban-board {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    overflow-x: auto;
+}
+
+.kanban-column {
+    flex: 1;
+    min-width: 250px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 0.8rem;
+}
+
+.column-title {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.4rem;
+}
+
+.kanban-card {
+    background-color: #111;
+    border: 1px solid #222;
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+    border-radius: 3px;
+    transition: border-color 0.2s ease;
+}
+
+.kanban-card.clickable {
+    cursor: pointer;
+}
+
+.kanban-card.clickable:hover {
+    border-color: #00ff66; /* Twój kolor akcentu w terminalu */
+}
+
+.card-date {
+    display: block;
+    font-size: 0.75rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.kanban-card h4 {
+    margin: 0 0 0.4rem 0;
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+.kanban-card p {
+    margin: 0;
+    color: #aaa;
+    font-size: 0.85rem;
+    line-height: 1.3;
+}
+.kanban-card p {
+    color: #aaa;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    text-align: justify;
+    margin: 0 0 0.8rem 0; /* Górny: 0, Prawy: 0, Dolny: 0.8rem, Lewy: 0 */
+}
+
+/* Usuwamy dolny margines z OSTATNIEGO akapitu w karcie */
+.kanban-card p:last-child {
+    margin-bottom: 0;
+}
