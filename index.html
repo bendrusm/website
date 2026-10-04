@@ -3,22 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
+    <meta name="description" content="Michał Sienkiewicz — Junior Security Analyst. Portfolio w stylu terminala: projekty, certyfikaty i blog o drodze do cyberbezpieczeństwa.">
+    <meta name="theme-color" content="#0d0d0d">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Michał Sienkiewicz — CLI">
+    <meta property="og:description" content="Michał Sienkiewicz — Junior Security Analyst. Portfolio w stylu terminala: projekty, certyfikaty i blog o drodze do cyberbezpieczeństwa.">
+    <meta property="og:locale" content="pl_PL">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <title>Michał Sienkiewicz — CLI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
+    <script src="i18n.js"></script>
 </head>
 <body>
+    <a class="skip-link" href="#main" data-i18n="skip">Przejdź do treści</a>
     
-    <main class="terminal">
+    <main class="terminal" id="main" tabindex="-1">
         <!-- HEADER TERMINALA -->
         <div class="code-line prompt">
             <span class="symbol">&gt;</span> <span class="entity">whois Michał Sienkiewicz</span>
         </div>
         <h1 class="code-line intro">
-            Junior Cybersecurity Analyst
+            Junior Security Analyst
         </h1>
+
+        <!-- MENU (klikalne odpowiedniki komend) -->
+        <nav class="menu" aria-label="Menu">
+            <button type="button" class="menu-btn" data-cmd="projekty" data-i18n="menu.projects">projekty</button>
+            <button type="button" class="menu-btn" data-cmd="umiejetnosci" data-i18n="menu.skills">umiejętności</button>
+            <button type="button" class="menu-btn" data-cmd="blog" data-i18n="menu.blog">blog</button>
+            <button type="button" class="menu-btn" data-cmd="wszystko" data-i18n="menu.all">wszystko</button>
+        </nav>
 
         <!-- HISTORIA KOMEND I LOGI -->
         <div id="cli-output"></div>
@@ -26,25 +46,25 @@
         <!-- INTERAKTYWNY PROMPT -->
         <div class="command-line">
             <span class="symbol">&gt;</span>
-            <input type="text" id="cli-input" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" placeholder="Wpisz komendę">
+            <input type="text" id="cli-input" aria-label="Wpisz komendę, np. pomoc" autocomplete="off" autocorrect="off" autocapitalize="none" data-i18n-attr="placeholder:idx.placeholder;aria-label:idx.aria" spellcheck="false" placeholder="Wpisz komendę">
         </div>
 
         <!-- UKRYTE SEKCJE STRONY -->
         <div id="terminal-sections">
             <!-- SEKCJA 1: PROJEKTY -->
             <section id="sec-projekty" class="section-block hidden">
-                <h2 class="section-title"># 01. PROJEKTY</h2>
+                <h2 class="section-title" data-i18n="idx.s1"># 01. PROJEKTY</h2>
                 <ul class="entry-list">
                     <li>
                         <a href="pages/nas.html" class="nav-item">
-                            <span class="entry-label">Serwer NAS</span>
-                            <span class="entry-meta">Dokumentacja / Foto</span>
+                            <span class="entry-label" data-i18n="idx.nas">Serwer NAS</span>
+                            <span class="entry-meta" data-i18n="idx.nasmeta">Dokumentacja / Foto</span>
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/twoj-profil/homelab" target="_blank" rel="noopener noreferrer" class="nav-item">
+                        <a href="https://github.com/bendrusm" target="_blank" rel="noopener noreferrer" class="nav-item">
                             <span class="entry-label">Homelab</span>
-                            <span class="entry-meta">W trakcie</span>
+                            <span class="entry-meta" data-i18n="idx.homelabmeta">W trakcie</span>
                         </a>
                     </li>
                 </ul>
@@ -52,18 +72,18 @@
 
             <!-- SEKCJA 2: KURSY I UMIEJĘTNOŚCI -->
             <section id="sec-skills" class="section-block hidden">
-                <h2 class="section-title"># 02. KURSY I UMIEJĘTNOŚCI</h2>
+                <h2 class="section-title" data-i18n="idx.s2"># 02. KURSY I UMIEJĘTNOŚCI</h2>
                 <ul class="entry-list">
                    <li>
                      <a href="pages/certyfikaty.html" class="nav-item">
-                        <span class="entry-label">Certyfikaty</span>
-                         <span class="entry-meta">01-09-25</span>
+                        <span class="entry-label" data-i18n="idx.certs">Certyfikaty</span>
+                         <span class="entry-meta">08-26</span>
                      </a>
                     </li>
                     <li>
                         <div class="nav-item info-item">
-                            <span class="entry-label">Umiejętności</span>
-                            <span class="entry-meta" id="skills-date"></span>
+                            <span class="entry-label" data-i18n="idx.skills">Umiejętności</span>
+                            <span class="entry-meta">Linux · SIEM/IDS · SQL · Python · Windows Server</span>
                         </div>
                     </li>
                 </ul>
@@ -71,29 +91,25 @@
 
             <!-- SEKCJA 3: MINI BLOG / LOGI -->
             <section id="sec-blog" class="section-block hidden">
-                <h2 class="section-title"># 03. Logi</h2>
+                <h2 class="section-title" data-i18n="idx.s3"># 03. Logi</h2>
                 <ul class="entry-list">
                     <li>
                         <a href="pages/blog.html" class="nav-item">
                             <span class="entry-label">Blog</span>
-                            <span class="entry-meta">05-04-26</span>
+                            <span class="entry-meta">24-07-26</span>
                         </a>
                     </li>
                 </ul>
             </section>
         </div>
-        <!--stopka-->
-<section class="section-block footer-code">
-    <div class="code-line">
-        <span class="function">o_mnie</span>(
-        <a href="pages/o-mnie.html" class="selectable-link">'profil'</a> )
-    </div>
-    
-    <div class="code-line" style="margin-top: 0.5rem;">
-        <span class="function">kontakt</span>(
-        <a href="mailto:bendrusm@gmail.com" class="selectable-link">'bendrusm@gmail.com'</a> )
-    </div>
-</section>
+
+        <!-- STOPKA STRONY -->
+        <footer class="section-block footer-code">
+            <div class="code-line">
+                <span class="function" data-i18n="idx.aboutfn">o_mnie</span>(
+                <a href="pages/o-mnie.html" class="selectable-link" data-i18n="idx.aboutlink">'profil'</a> )
+            </div>
+        </footer>
     </main>
 
     <script src="script.js"></script>

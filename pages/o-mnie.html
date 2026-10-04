@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
-    <meta name="description" content="Szablon podstrony.">
+    <meta name="description" content="Michał Sienkiewicz, Junior Security Analyst w EBRAND AG. Analiza detekcji, studia inżynierskie i projekty.">
     <meta name="theme-color" content="#0d0d0d">
-    <meta name="robots" content="noindex">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Tytuł Podstrony — Michał Sienkiewicz">
-    <meta property="og:description" content="Szablon podstrony.">
+    <meta property="og:title" content="O mnie — Michał Sienkiewicz">
+    <meta property="og:description" content="Michał Sienkiewicz, Junior Security Analyst w EBRAND AG. Analiza detekcji, studia inżynierskie i projekty.">
     <meta property="og:locale" content="pl_PL">
     <meta name="twitter:card" content="summary">
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-    <title>Tytuł Podstrony — Michał Sienkiewicz</title>
+    <title data-i18n="about.title">O mnie — Michał Sienkiewicz</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -24,49 +23,42 @@
     <a class="skip-link" href="#main" data-i18n="skip">Przejdź do treści</a>
 
     <main class="terminal" id="main" tabindex="-1">
-        <!-- HEADER TERMINALA -->
         <div class="code-line prompt">
-            <span class="symbol">&gt;</span> <span class="entity">cat nazwa-pliku.md</span>
+            <span class="symbol">&gt;</span> <span class="entity">cat o-mnie.md</span>
         </div>
-        <h1 class="code-line intro">
-            Tytuł Projektu / Wpisu
+        <h1 class="code-line intro" data-i18n="about.h1">
+            O mnie
         </h1>
 
-        <!-- POWRÓT DO STRONY GŁÓWNEJ -->
         <div class="back-wrap">
             <a href="../index.html" class="selectable-link back-link" data-i18n="back.home">&lt;-- Powrót do menu głównego</a>
         </div>
 
-        <!-- BLOK KODU OBSIDIAN -->
         <div class="code-block">
             <div class="code-header">
-                <span class="file-name">nazwa-pliku.md</span>
+                <span class="file-name">o-mnie.md</span>
                 <span class="lang-tag">markdown</span>
             </div>
-            
+
             <div class="code-content">
-                <h2># 01. TYTUŁ SEKCJI</h2>
-                <p>
-                    Tutaj wpisz swój tekst...
+                <h2 data-i18n="about.s1"># 01. KIM JESTEM</h2>
+                <p data-i18n="about.p1">
+                    Michał Sienkiewicz, Junior Security Analyst w EBRAND AG. Analizuję detekcje wyszukiwane przez system, a następnie oceniam je i klasyfikuję zgodnie ze strategią ochrony przypisaną do marki, którą chronię. Równolegle studiuję na kierunku inżynierskim — właśnie zaczynam drugi rok.
                 </p>
 
-                <h2># 02. ZDJĘCIE / ARCHITEKTURA</h2>
-                <div class="img-container">
-                    <img src="../png/twoje-zdjecie.jpg" alt="Opis zdjęcia">
-                    <span class="img-caption">[Foto: Podpis pod zdjęciem]</span>
-                </div>
+                <h2 data-i18n="about.s2"># 02. CZYM SIĘ ZAJMUJĘ</h2>
+                <ul>
+                    <li data-i18n="about.li1">Analiza napływających detekcji: ocena i klasyfikacja zgodnie ze strategią danej marki</li>
+                    <li data-i18n="about.li2">Studia inżynierskie (2. rok)</li>
+                    <li data-i18n="about.li3">Homelab w trakcie przebudowy — na szczegóły przyjdzie jeszcze czas. Wcześniejszy projekt: <a href="nas.html" class="selectable-link c-green">serwer NAS</a></li>
+                </ul>
             </div>
         </div>
-
-        <!-- STOPKA -->
-        <section class="section-block footer-code">
-            <div class="code-line">
-                <span class="function">status</span>( <span class="c-green">'Status wpisu'</span> )
-            </div>
+        <footer class="section-block footer-code">
             <div class="code-line mt-sm">
                 <a href="../index.html" class="selectable-link back-link" data-i18n="back.home">&lt;-- Powrót do menu głównego</a>
             </div>
-        </section>
+        </footer>
     </main>
 
 </body>

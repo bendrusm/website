@@ -3,50 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
+    <meta name="description" content="Dziennik pokładowy z drogi do cyberbezpieczeństwa: od darmowego kursu do pierwszej pracy analityka.">
+    <meta name="theme-color" content="#0d0d0d">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blog — Michał Sienkiewicz">
+    <meta property="og:description" content="Dziennik pokładowy z drogi do cyberbezpieczeństwa: od darmowego kursu do pierwszej pracy analityka.">
+    <meta property="og:locale" content="pl_PL">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <title>Blog — Michał Sienkiewicz</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
+    <script src="../i18n.js"></script>
 </head>
-<body class="cli-body">
+<body>
+    <a class="skip-link" href="#main" data-i18n="skip">Przejdź do treści</a>
 
-<main class="container">
-    <!-- Sekcja Blog / Kanban -->
+<main class="terminal" id="main" tabindex="-1">
+    <div class="code-line prompt">
+        <span class="symbol">&gt;</span> <span class="entity">cat blog.log</span>
+    </div>
+    <h1 class="code-line intro">Blog</h1>
+
+    <div class="back-wrap">
+        <a href="../index.html" class="selectable-link back-link" data-i18n="back.home">&lt;-- Powrót do menu głównego</a>
+    </div>
+
     <section id="sec-blog" class="section-block">
-        <div class="code-line">
-            <span class="function">cat</span>( <span class="string">'kanban_board.log'</span> )
-        </div>
-
-        <div class="kanban-board">
-            <!-- Kolumna: Pomysły / Drafty -->
-            <div class="kanban-column">
-                <h3 class="column-title">Od darmowego kursu do pracy</h3>
-                <div class="kanban-card">
-                    <span class="card-date">2026-07-24</span>
-                    <h4>Początek</h4>
-                    <p>Zawsze ciągnęło mnie do IT, ale moje wejście w świat cyberbezpieczeństwa nie było wyreżyserowanym planem z wieloletnim wyprzedzeniem. Zapalnikiem okazał się bezpłatny kurs od INCO — to tam po raz pierwszy poczułem, że to jest właśnie to środowisko. Chwilę później wszedłem głębiej w pakiet Google Cybersecurity Professional. Zaskoczyło mnie, jak mocny był to zbiór materiałów — w rzeczywistości okazał się połączeniem kilkunastu mniejszych kursów w jeden solidny pakiet, który dał mi twarde, teoretyczne fundamenty z zakresu sieci, systemów, wiersza poleceń Linuksa i procedur bezpieczeństwa.
+        <!-- NOWY WPIS: skopiuj cały blok <article> i wklej go NAD poprzednim (najnowszy na górze).
+             Teksty oznaczaj data-i18n="klucz" i dopisz angielskie wersje w i18n.js. -->
+        <article class="post">
+            <p class="post-meta">
+                <time datetime="2026-07-24">2026-07-24</time> · <span data-i18n="blog.col">Od darmowego kursu do pracy</span>
+            </p>
+            <h2 class="post-title" data-i18n="blog.h4">Początek</h2>
+            <p data-i18n="blog.p1">Zawsze ciągnęło mnie do IT, ale moje wejście w świat cyberbezpieczeństwa nie było wyreżyserowanym planem z wieloletnim wyprzedzeniem. Zapalnikiem okazał się bezpłatny kurs od INCO — to tam po raz pierwszy poczułem, że to jest właśnie to środowisko. Chwilę później wszedłem głębiej w pakiet Google Cybersecurity Professional. Zaskoczyło mnie, jak mocny był to zbiór materiałów — w rzeczywistości okazał się połączeniem kilkunastu mniejszych kursów w jeden solidny pakiet, który dał mi twarde, teoretyczne fundamenty z zakresu sieci, systemów, wiersza poleceń Linuksa i procedur bezpieczeństwa.
                     </p>
-                    <p>
-                        Po kilku miesiącach intensywnej nauki dopiąłem swego: zacząłem pracę jako Junior Security Analyst. Czy każdy może ot tak wejść w cyber? Nie będę rzucał tanimi sloganami z sieci. U mnie się udało, mimo że nie miałem za sobą lat spędzonych w korporacyjnych działach IT, a jedynie staże. Wygrała determinacja, brak strachu przed wyzwaniami i trafienie na świetnych ludzi w zespole, od których chłonę wiedzę każdego dnia. Dziś po raz pierwszy w życiu robię coś, co daje mi realne poczucie sensu i satysfakcję — ochrona infrastruktury, analiza logów i reagowanie na zagrożenia to dla mnie praca połączona z pasją.
+            <p data-i18n="blog.p2">
+                Po kilku miesiącach intensywnej nauki dopiąłem swego: zacząłem pracę jako Junior Security Analyst. Czy każdy może ot tak wejść w cyber? Nie będę rzucał tanimi sloganami z sieci. U mnie się udało, mimo że nie miałem za sobą lat spędzonych w korporacyjnych działach IT, a jedynie staże. Wygrała determinacja, brak strachu przed wyzwaniami i trafienie na świetnych ludzi w zespole, od których chłonę wiedzę każdego dnia. Dziś po raz pierwszy w życiu robię coś, co daje mi realne poczucie sensu i satysfakcję — ochrona marek, analiza detekcji i ich klasyfikacja to dla mnie praca połączona z pasją.
                     </p>
-                    <p>
-                        Równolegle rozwijam swój prywatny warsztat. Sprzedałem zasłużonego ThinkPada T490 i przesiadłem się na znacznie mocniejszego ThinkPada T14 Gen 2 z 48 GB RAM-u. To mój główny, osobisty sprzęt, na którym uczę się programowania, szlifuję skrypty i analizuję środowiska. Wciąż szukam ostatecznego pomysłu na swój docelowy homelab, ale ta maszyna daje mi pełną swobodę działania — niezależnie od tego, czy stawiam wirtualki, czy piszę kod.
+            <p data-i18n="blog.p3">
+                Równolegle rozwijam swój prywatny warsztat. Sprzedałem zasłużonego ThinkPada T490 i przesiadłem się na znacznie mocniejszego ThinkPada T14 Gen 2 z 48 GB RAM-u. To mój główny, osobisty sprzęt, na którym uczę się programowania, szlifuję skrypty i analizuję środowiska. Mój homelab właśnie przechodzi przemianę (na szczegóły przyjdzie jeszcze czas), ale ta maszyna daje mi pełną swobodę działania — niezależnie od tego, czy stawiam wirtualki, czy piszę kod.
                     </p>
-                    <p>
-                        Ten blog powstaje bez koloryzowania. Będzie moim dziennikiem pokładowym, w którym będę opisywał moją przygodę z cyber: codzienne doświadczenia analityka w SOC, napotkane problemy, osiągnięcia, naukę na studiach inżynierskich, eksperymenty ze sprzętem oraz przygotowania do egzaminu CompTIA Security+.
+            <p data-i18n="blog.p4">
+                Ten blog powstaje bez koloryzowania. Będzie moim dziennikiem pokładowym, w którym będę opisywał moją przygodę z cyber: codzienne doświadczenia analityka bezpieczeństwa, napotkane problemy, osiągnięcia, naukę na studiach inżynierskich, eksperymenty ze sprzętem oraz przygotowania do egzaminu CompTIA Security+.
                     </p>
-                </div>
-            </div>
-            </div>
-        </div>
+        </article>
     </section>
 
     <!-- Powrót do strony głównej -->
-    <footer class="post-footer" style="margin-top: 2rem;">
+    <footer class="section-block footer-code post-footer">
         <div class="code-line">
-            <span class="function">powrot</span>(
-            <a href="../index.html" class="selectable-link">'strona główna'</a> )
+            <span class="function" data-i18n="blog.fn">powrot</span>(
+            <a href="../index.html" class="selectable-link" data-i18n="blog.home">'strona główna'</a> )
         </div>
     </footer>
 </main>

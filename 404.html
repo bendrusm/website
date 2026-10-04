@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'sha256-RVbJu6Y1rXE3bOabWr0zuf/8rN1P3QA39wBRpqipx1Q='; base-uri 'none'; form-action 'none'">
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#0d0d0d">
+    <title>404 — Michał Sienkiewicz</title>
+    <style>
+        body { margin: 0; padding: 1.5rem 1rem; min-height: 100vh; background: #0d0d0d; color: #cad3f5;
+               font-family: ui-monospace, 'Roboto Mono', Menlo, Consolas, monospace; font-size: 0.95rem; line-height: 1.5; }
+        main { max-width: 750px; margin: 0 auto; }
+        .sym { color: #ed8796; font-weight: bold; }
+        .cmd { color: #eed49f; font-weight: bold; }
+        h1 { font-size: 1rem; font-weight: normal; margin: 0.2rem 0 1rem; }
+        .err { color: #ed8796; }
+        a { color: #8aadf4; }
+        a:focus-visible { outline: 2px solid #8aadf4; outline-offset: 2px; }
+    </style>
+</head>
+<body>
+    <main>
+        <div><span class="sym">&gt;</span> <span class="cmd">cat strona</span></div>
+        <h1>404</h1>
+        <p class="err" lang="pl">cat: strona: nie ma takiego pliku ani katalogu</p>
+        <p class="err" lang="en">cat: strona: No such file or directory</p>
+        <p><a id="home" href="/">&lt;-- Powrót do strony głównej / Back to home</a></p>
+    </main>
+    <script>var h=document.getElementById('home');var p=location.pathname;h.href=(/\.github\.io$/.test(location.hostname)&&p.indexOf('/website/')===0)?'/website/':'/';</script>
+</body>
+</html>

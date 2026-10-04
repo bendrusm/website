@@ -1,0 +1,11 @@
+# system
+.DS_Store
+Thumbs.db
+
+# edytory
+*.swp
+*~
+
+# archiwa i zależności
+*.zip
+node_modules/
